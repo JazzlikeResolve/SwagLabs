@@ -1,128 +1,100 @@
-Automated Testing Suite for Sauce Demo website using Playwright with TypeScript and Page Object Model concept.
+# 🧪 Automated Testing Suite for Sauce Demo
 
-Quick Start (Install):
+Automated testing suite for Sauce Demo website using Playwright with TypeScript and Page Object Model pattern.
 
-- npm init playwright@latest
+## 🚀 Quick Start
 
-Dependencies:
+### Installation
+```bash
+# Install dependencies
+npm install
 
-- npm install
-
-Install Playwright Browsers:
-
-- npx playwright install
-
-Running the Tests in the Test Suite:
-
+# Install Playwright browsers
+npx playwright install
+Running Tests
+bash
 # Run all tests
-
 npm test
 
 # Run tests with UI mode
-
 npm run test:ui
 
 # Run specific test file
-
 npx playwright test tests/specs/checkout-overview.spec.ts
 
 # Run tests in headed mode (visible browser)
-
 npm run test:headed
 
 # Generate and open HTML report
-
 npm run report
 
 # Debug tests
-
 npm run test:debug
-
-Project Structure:
-
+ Project Structure
+text
 SwagLabs/
-├─ .github/
-│ └─ workflows/
-│ └─ playwright.yml
-├─ playwright-report/
-│ ├─ data/
-│ │ └─ d8da542ef25dc55b48104616ca5e0bca4b70e848.webm
-│ └─ index.html
-├─ test-results/
-│ ├─ specs-checkout--CheckoutProcess-Vajla--chromium/
-│ │ └─ video.webm
-│ ├─ specs-checkout-overview-checkout-form-left-empty-error-chromium/
-│ │ └─ video.webm
-│ ├─ specs-checkout-overview-CheckoutProcess-Vajla--chromium/
-│ │ └─ video.webm
-│ ├─ specs-inventory-add-all-of-the-inventory-items-chromium/
-│ │ └─ video.webm
-│ └─ specs-inventory-verify-buttons-change-after-adding-to-cart-chromium/
-│ └─ video.webm
-├─ tests/
-│ ├─ data/
-│ │ ├─ user-info.ts
-│ │ └─ users.ts
-│ ├─ pages/
-│ │ ├─ constants/
-│ │ │ └─ app.constants.ts
-│ │ ├─ base-page.ts
-│ │ ├─ cart-page.ts
-│ │ ├─ checkout-overview.ts
-│ │ ├─ checkout-page-step-two.ts
-│ │ ├─ checkout-page-your-info.ts
-│ │ ├─ inventory-page.ts
-│ │ └─ login-page.ts
-│ ├─ specs/
-│ │ ├─ cart.spec.ts
-│ │ ├─ checkout-.spec.ts
-│ │ ├─ checkout-overview.spec.ts
-│ │ ├─ inventory.spec.ts
-│ │ └─ login.spec.ts
-│ └─ example.spec.ts
-├─ .gitignore
-├─ before-cart.png
-├─ debug-page.png
-├─ NOTES.md
-├─ package-lock.json
-├─ package.json
-├─ playwright.config.ts
-├─ README.md
-├─ results.xml
-└─ test-results.json
+├── tests/
+│   ├── specs/              # Test files
+│   │   ├── cart.spec.ts            # Cart operations
+│   │   ├── checkout-.spec.ts       # Basic checkout
+│   │   ├── checkout-overview.spec.ts # Multi-user checkout
+│   │   ├── inventory.spec.ts       # Product tests
+│   │   └── login.spec.ts           # Login tests
+│   ├── pages/              # Page Object Models
+│   │   ├── constants/              # App constants
+│   │   ├── base-page.ts            # Base page class
+│   │   ├── cart-page.ts            # Cart page
+│   │   ├── checkout-overview.ts    # Checkout step 2
+│   │   ├── checkout-page-your-info.ts # Checkout step 1
+│   │   ├── inventory-page.ts       # Products page
+│   │   └── login-page.ts           # Login page
+│   └── data/               # Test data
+│       ├── user-info.ts            # Checkout information
+│       └── users.ts                # User credentials
+├── .github/workflows/      # CI/CD pipeline
+├── playwright-report/      # HTML test reports
+├── test-results/           # Test artifacts (videos, screenshots)
+├── playwright.config.ts    # Playwright configuration
+├── package.json            # Dependencies
+└── README.md               # Project documentation
+🧪 Test Scenarios
+Authentication
+Login with valid credentials
 
-Authentication:
+Login with invalid credentials
 
-- Login with valid credenitals
-- Login with invalid credentials
+Inventory Management
+Browse products
 
-Inventory:
+View product details
 
-- Browse products
-- View product details
-- Add / Remove items from cart
-- Sort products (A-Z, Z-A, price high-low, low-high)
+Add/Remove items from cart
 
-Shopping Cart:
+Sort products (A-Z, Z-A, price high-low, low-high)
 
-- Add single item to cart
-- Add multiple items to cart
-- Remove items from cart
-- Verify Cart Counts and Totals
+Shopping Cart
+Add single item to cart
 
-Checkout Process:
+Add multiple items to cart
 
-- Complete checkout with valid information
-- Multi-user checkout testing (Adnan, Helen, Roger)
-- Form validation (empty fields, invalid data)
-- Order Confirmation
+Remove items from cart
 
-Environment Variables:
+Verify cart counts and totals
 
-- Create .env file for sensitive data:
+Checkout Process
+Complete checkout with valid information
 
-- env (file)
+Multi-user checkout testing (Adnan, Helen, Roger)
 
+Form validation (empty fields, invalid data)
+
+Order confirmation
+
+⚙️ Configuration
+Environment Variables
+Create .env file for sensitive data:
+
+env
 BASE_URL=https://www.saucedemo.com
 USERNAME=standard_user
 PASSWORD=secret_sauce
@@ -137,10 +109,9 @@ Video recording settings
 
 Screenshot policies
 
-Troubleshooting
-
-- Common Issues:
-  Tests failing on form submission
+🐛 Troubleshooting
+Common Issues
+Tests failing on form submission
 
 Ensure ZIP codes are strings: "32258" not 32258
 
@@ -158,21 +129,16 @@ typescript
 await expect(page).toHaveURL(/expected-page\.html$/);
 Debugging
 bash
-
 # Run in debug mode
-
 npx playwright test --debug
 
 # Use codegen to record new tests
-
 npx playwright codegen https://www.saucedemo.com
 
 # Update snapshots
-
 npx playwright test --update-snapshots
-
-- CI/CD Pipeline:
-  Automated testing via GitHub Actions:
+ CI/CD Pipeline
+Automated testing via GitHub Actions:
 
 Runs on every push to main branch
 
@@ -182,7 +148,7 @@ Uploads test artifacts and reports
 
 Supports all major browsers
 
-Contributing
+ Contributing
 Fork the repository
 
 Create a feature branch (git checkout -b feature/AmazingFeature)
@@ -193,16 +159,15 @@ Push to branch (git push origin feature/AmazingFeature)
 
 Open a Pull Request
 
-Notes:
+ Notes
+See NOTES.md for detailed testing notes, troubleshooting, and project-specific information.
 
-- See NOTES.md for detailed testing notes, troubleshooting, and project-specific information.
-
-📄 License
+ License
 This project is licensed under the MIT License - see the LICENSE file for details.
 
 Acknowledgments
-Playwright Website
+Playwright 
 
 Sauce Demo for the test application
 
-The testing community for best practices and patterns
+AI Tools for helping when nothing works
