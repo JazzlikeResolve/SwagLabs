@@ -1,0 +1,18 @@
+<testsuites id="" name="" tests="1" failures="0" skipped="0" errors="0" time="10.3335">
+<testsuite name="specs\checkout-overview.spec.ts" timestamp="2025-12-07T00:13:01.102Z" hostname="chromium" tests="1" failures="0" skipped="0" time="8.311" errors="0">
+<testcase name="checkout form left empty error" classname="specs\checkout-overview.spec.ts" time="8.311">
+<system-out>
+<![CDATA[Cart count: 4
+Cart items: [
+  [32m'Sauce Labs Backpack'[39m,
+  [32m'Sauce Labs Bolt T-Shirt'[39m,
+  [32m'Sauce Labs Fleece Jacket'[39m,
+  [32m'Sauce Labs Bike Light'[39m
+]
+
+[[ATTACHMENT|test-results\specs-checkout-overview-checkout-form-left-empty-error-chromium\video.webm]]
+]]>
+</system-out>
+</testcase>
+</testsuite>
+</testsuites>
