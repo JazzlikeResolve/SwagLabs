@@ -31,7 +31,7 @@ npm run report
 # Debug tests
 npm run test:debug
  Project Structure
-text
+
 SwagLabs/
 ├── tests/
 │   ├── specs/              # Test files
