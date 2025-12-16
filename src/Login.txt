@@ -1,0 +1,12 @@
+1. Check the title to make sure it is visible and it matches the text,
+requires the object to be created as we are asking it to verify 
+
+2. Check every user, go through the username checklist to make sure they have the correct message
+create object as we need to verify text and error messages 
+
+3. Make sure that when we click the Login button that the 
+next page it takes us to is the product page
+
+4. when checking to see which options are returning use the console.log to verify 
+for example using a object console.log(`For ${user.username}: "${errorText}"`); 
+back tics and then code
